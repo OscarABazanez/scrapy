@@ -18,27 +18,41 @@ scrapy crawl name_del_spider
 scrapy shell 'url_del_sitio'
 ```
 
+## Guardar datos en un archivo
+```
+scrapy crawl name_del_spider -o nombre_archivo.csv
+```
+
 ### Ejemplo de Usos de Xpath en Shell
 
 **Pagina: Quotes**
 ```
 scrapy shell 'http://quotes.toscrape.com/'
 
-#Obtener el titulo
+# Obtener el titulo
+response.xpath('//h1/a/text()').get()
+
+# Obtener las citas
 response.xpath('//span[@class="text"]/text()').get()
 
-Obtener el author
+# Obtener el author
 response.xpath('//small[@class="author" and @itemprop="author"]/text()').getall()
 
-```
+# Obtener Top Ten tags
+response.xpath('//div[contains(@class,"tags-box")]//span[@class="tag-item"]/a[@class="tag"]/text()').getall()
 
+```
+# Boton de siguiente pagina
+```
+response.xpath('//ul[@class="pager"]//li[@class="next"]/a/@href').get()
+```
 **Pagina: Coin Market Cap**
 ```
 scrapy shell 'https://coinmarketcap.com/'
 
-Obtener el nombre de las criptomendas
+# Obtener el nombre de las criptomendas
 response.xpath('//div[@class="sc-16r8icm-0 sc-1teo54s-1 dNOTPP"]/p[@class="sc-1eb5slv-0 iworPT"]/text()').getall()
 
-Obtener el precio de las criptomonedas
+# Obtener el precio de las criptomonedas
 response.xpath('//div[@class="sc-131di3y-0 cLgOOr"]/a[@class="cmc-link"]/text()').getall()
 ```
