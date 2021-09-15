@@ -10,7 +10,7 @@ scrapy startproject nombre_proyecto
 
 ## Ejecutar Proyecto con Scrapy
 ```
-scrapy crawl name_del_spider
+scrapy crawl name_spider
 ```
 
 ## Ejecutar Shell de Scrapy
@@ -20,9 +20,13 @@ scrapy shell 'url_del_sitio'
 
 ## Guardar datos en un archivo
 ```
-scrapy crawl name_del_spider -o nombre_archivo.csv
+scrapy crawl name_spider -o nombre_archivo.csv
 ```
-
+## Argumentos por consola
+Top **n** tags
+```
+scrapy crawl name_spider -a top=5
+```
 ### Ejemplo de Usos de Xpath en Shell
 
 **Pagina: Quotes**
