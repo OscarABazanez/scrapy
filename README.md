@@ -73,3 +73,13 @@ response.xpath('//h1[@class="documentFirstHeading"]/text()').get()
 # Obtener el contenido del archivo desclasificado
 response.xpath('//div[@class="field-item even"]/p[not(@class)]/text()').getall()
 ```
+
+# Usando la API publica de Scrapy Cloud
+[Documentacion de Scrapy Cloud](https://docs.zyte.com/scrapy-cloud.html)
+```
+# Podemos ejecutar el spider de forma remota por ejemplo desde nuestro BackEnd o linea de comando.
+curl -u APIKEY: https://app.scrapinghub.com/api/run.json -d project=PROJECT -d spider=SPIDER
+
+# Obtener los datos de un proceso:
+curl -u APIKEY https://storage.scrapinghub.com/items/PROJECT_ID/SPYDER_NUMBER/JOB_NUMBER
+```
