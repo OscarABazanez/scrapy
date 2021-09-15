@@ -58,3 +58,18 @@ response.xpath('//div[@class="sc-16r8icm-0 sc-1teo54s-1 dNOTPP"]/p[@class="sc-1e
 # Obtener el precio de las criptomonedas
 response.xpath('//div[@class="sc-131di3y-0 cLgOOr"]/a[@class="cmc-link"]/text()').getall()
 ```
+
+# Scraper CIA
+
+```
+scrapy shell https://www.cia.gov/readingroom/historical-collections
+
+# Obtener los links de los archivos desclasificados
+response.xpath('//a[starts-with(@href, "collection") and (parent::h3|parent::h2)]/@href').getall()
+
+# Titulo del archivo desclasificado
+response.xpath('//h1[@class="documentFirstHeading"]/text()').get()
+
+# Obtener el contenido del archivo desclasificado
+response.xpath('//div[@class="field-item even"]/p[not(@class)]/text()').getall()
+```
