@@ -45,12 +45,10 @@ response.xpath('//small[@class="author" and @itemprop="author"]/text()').getall(
 # Obtener Top Ten tags
 response.xpath('//div[contains(@class,"tags-box")]//span[@class="tag-item"]/a[@class="tag"]/text()').getall()
 
-```
 # Boton de siguiente pagina
-```
 response.xpath('//ul[@class="pager"]//li[@class="next"]/a/@href').get()
 ```
-**Pagina: Coin Market Cap**
+**Ejemplo de Shell en Coin Market Cap**
 ```
 scrapy shell 'https://coinmarketcap.com/'
 
