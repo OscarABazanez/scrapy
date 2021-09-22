@@ -29,8 +29,8 @@ class CompareProductTest(unittest.TestCase):
 	    search_field.send_keys('tee')
 	    search_field.submit()   
 	    driver.find_element_by_class_name('link-compare').click()
-	    driver.find_element_by_link_text('Clear All').click()
-    
+	    driver.find_element_by_xpath('//a[contains(text(),"Clear All")]').click()
+
 	    #creamos una variable para interactuar con el pop-up
 	    alert = driver.switch_to_alert()
 	    #vamos a extraer el texto que muestra
